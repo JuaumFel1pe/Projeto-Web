@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const inputPesquisa = document.querySelector('.barra-pesquisa input');
     const iconeLupa = document.getElementById('lupa');
 
-    // Executa a busca global da home
     function realizarBusca() {
         const termo = inputPesquisa.value.trim();
         if (termo !== "") {
@@ -12,12 +11,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     iconeLupa.addEventListener('click', realizarBusca);
     inputPesquisa.addEventListener('keypress', (event) => {
-        if (event.key === 'Enter') {
-            realizarBusca();
-        }
+        if (event.key === 'Enter') realizarBusca();
     });
 
-    // Clique nos Cards de Eventos Disponíveis
     const cards = document.querySelectorAll('.card-ev');
     cards.forEach(card => {
         card.addEventListener('click', () => {
