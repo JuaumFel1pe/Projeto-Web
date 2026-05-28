@@ -9,68 +9,109 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #121212; /* Preto de fundo igual à imagem */
+  /* Fundo escuro simulando o site borrado atrás do modal */
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), #121212;
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.container {
-  width: 380px; /* Largura ajustada para o card da imagem */
-  background: #1c1c1c; /* Cinza escuro do card */
-  padding: 40px;
-  border-radius: 24px; /* Bordas mais arredondadas */
-  box-shadow: 0 0 25px rgba(176, 38, 255, 0.15); /* Brilho roxo sutil */
-}
-
-h1 {
-  color: white;
+/* O CARD DO MODAL (Igualzinho à imagem) */
+.modal-container {
+  position: relative;
+  width: 480px;
+  background: #e6e6e6; /* Cinza bem claro do fundo do modal */
+  padding: 50px 40px 0px 40px;
+  border-radius: 32px; /* Cantos bem arredondados */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   text-align: center;
-  margin-bottom: 30px;
-  font-size: 28px;
-  font-weight: bold;
+  overflow: hidden;
 }
 
-/* Configuração Geral dos Inputs */
+/* Título Roxo Suave */
+h1 {
+  color: #c05eff; /* Roxo claro do título */
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 35px;
+  letter-spacing: -0.5px;
+}
+
+/* ESTILO DOS INPUTS */
 input {
   width: 100%;
-  height: 50px;
+  height: 55px;
   margin-bottom: 20px;
-  border: none;
+  border: 1.5px solid #cccccc;
   outline: none;
-  border-radius: 12px;
-  padding: 0 15px;
-  font-size: 16px;
+  border-radius: 14px;
+  padding: 0 20px;
+  font-size: 15px;
+  background: #f0f0f0;
+  color: #333333;
+  transition: border-color 0.2s;
 }
 
-/* INPUT DE EMAIL: Fundo claro igual ao da sua foto */
-input[type="email"] {
-  background: #e8f0fe;
-  color: #000000;
+input:focus {
+  border-color: #c05eff; /* Destaca a borda ao clicar */
 }
 
-/* INPUT DE SENHA: Fundo escuro igual ao da sua foto */
-input[type="password"] {
-  background: #2b2b2b;
-  color: white;
+/* Placeholder cinza elegante */
+input::placeholder {
+  color: #999999;
 }
 
-/* BOTÃO ROXO VIBRANTE */
-button {
+/* BOTÃO CONTINUAR (Vazado com borda roxa) */
+.btn-continuar {
   width: 100%;
-  height: 50px;
-  border: none;
-  border-radius: 12px;
-  background: #a826ff;
-  color: white;
+  height: 55px;
+  border: 1.5px solid #c05eff;
+  border-radius: 14px;
+  background: transparent;
+  color: #c05eff;
   font-size: 16px;
-  font-weight: bold;
+  font-weight: 500;
   cursor: pointer;
-  transition: 0.2s, transform 0.1s;
+  margin-top: 10px;
+  margin-bottom: 40px;
+  transition: all 0.2s;
 }
 
-button:hover {
-  background: #b942ff;
+.btn-continuar:hover {
+  background: rgba(192, 94, 255, 0.1); /* Efeito sutil ao passar o mouse */
 }
 
-button:active {
-  transform: scale(0.98);
+/* ABA INFERIOR DE REDIRECIONAMENTO */
+.footer-modal {
+  background: #dedede; /* Tom de cinza um pouco mais escuro para a barra inferior */
+  margin: 0 -40px; /* Expande para colar nas laterais */
+  padding: 20px 0;
+  font-size: 14px;
+  color: #444444;
+  border-top: 1px solid #d0d0d0;
+}
+
+.footer-modal a {
+  color: #4f85ff; /* Azul clássico para o link */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footer-modal a:hover {
+  text-decoration: underline;
+}
+
+/* BOTÃO DE FECHAR (X) */
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  background: transparent;
+  border: none;
+  font-size: 28px;
+  color: #999999;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.close-btn:hover {
+  color: #333333;
 }

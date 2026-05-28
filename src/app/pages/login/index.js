@@ -4,7 +4,7 @@ const modo = params.get("modo");
 const loginForm = document.getElementById("login-form");
 const registroForm = document.getElementById("registro-form");
 
-/* MOSTRAR FORM CERTO */
+/* CONFIGURA O FORMULÁRIO INICIAL */
 if (modo === "registro") {
   loginForm.style.display = "none";
   registroForm.style.display = "block";
@@ -13,26 +13,20 @@ if (modo === "registro") {
   loginForm.style.display = "block";
 }
 
-/* REGISTRAR (CADASTRO) */
+/* REGISTRAR */
 function registrar() {
   const email = document.getElementById("registro-email").value;
   const senha = document.getElementById("registro-senha").value;
 
   if (email === "" || senha === "") {
-    alert("Preencha todos os campos");
+    alert("Preencha todos os campos!");
     return;
   }
 
-  const usuario = {
-    email: email,
-    senha: senha,
-  };
-
+  const usuario = { email, senha };
   localStorage.setItem(email, JSON.stringify(usuario));
 
   alert("Usuário registrado com sucesso!");
-
-  // Recarrega a própria página mudando o modo para exibir o formulário de login
   window.location.href = "login.html?modo=login";
 }
 
@@ -52,12 +46,8 @@ function fazerLogin() {
 
   if (usuario.senha === senha) {
     alert("Login realizado com sucesso!");
-
-    // Grava que o usuário está ativo no navegador
     localStorage.setItem("usuarioLogado", "true");
 
-    // INTEGRAÇÃO COM O CARRINHO: 
-    // Se ele veio do carrinho e já tem um ingresso escolhido, volta para lá.
     if (localStorage.getItem("ingressoSelecionado")) {
       window.location.href = "../home/carrinho.html";
     } else {

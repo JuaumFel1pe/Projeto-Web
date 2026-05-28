@@ -3,40 +3,56 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Galarraga Eventos - Autenticação</title>
+    <title>Conectar - Galarraga Eventos</title>
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-    <div class="container">
+    
+    <div class="modal-container">
+      <button class="close-btn" onclick="window.location.href='../home/home.html'">&times;</button>
 
       <div id="login-form">
-        <h1>Login</h1>
+        <h1>Informe seus dados credenciais!</h1>
+        
         <input
           type="email"
           id="login-email"
-          placeholder="Digite seu email"
+          placeholder="Informe seu E-mail"
         />
+
         <input
           type="password"
           id="login-senha"
-          placeholder="Digite sua senha"
+          placeholder="Informe sua Senha"
         />
-        <button onclick="fazerLogin()">Entrar</button>
+
+        <button class="btn-continuar" onclick="fazerLogin()">Continuar</button>
+        
+        <div class="footer-modal">
+            <p>Não possui uma conta? <a href="login.html?modo=registro">Registre-se</a></p>
+        </div>
       </div>
 
       <div id="registro-form">
-        <h1>Registrar-se</h1>
+        <h1>Crie suas credenciais de acesso!</h1>
+        
         <input
           type="email"
           id="registro-email"
-          placeholder="Digite seu email"
+          placeholder="Informe seu E-mail"
         />
+
         <input
           type="password"
           id="registro-senha"
-          placeholder="Digite sua senha"
+          placeholder="Informe sua Senha"
         />
-        <button onclick="registrar()">Registrar</button>
+
+        <button class="btn-continuar" onclick="registrar()">Registrar</button>
+        
+        <div class="footer-modal">
+            <p>Já possui uma conta? <a href="login.html?modo=login">Fazer Login</a></p>
+        </div>
       </div>
 
     </div>
