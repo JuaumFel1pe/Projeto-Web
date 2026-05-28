@@ -1,4 +1,3 @@
-/* ================= RESET GERAL ================= */
 * {
     margin: 0;
     padding: 0;
@@ -9,10 +8,8 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     background: #000;
     color: white;
-    overflow-x: hidden;
 }
 
-/* ================= NAVBAR / CABEÇALHO ================= */
 nav {
     width: 100%;
     height: 75px;
@@ -87,7 +84,6 @@ nav {
     box-shadow: 0 0 15px #b026ff;
 }
 
-/* ================= HERO SECTION (SESSÃO 1) ================= */
 .hero {
     width: 100%;
     height: 100vh;
@@ -146,7 +142,6 @@ nav {
     box-shadow: 0 0 20px #b026ff;
 }
 
-/* ================= SESSÃO 2: INTEGRAÇÃO CULTURAL ================= */
 .sessao2-home {
     background-color: #000000;
     display: flex;
@@ -227,64 +222,6 @@ nav {
     object-fit: contain;
 }
 
-/* ================= SESSÃO 3: EXPERIÊNCIAS ================= */
-.sessao3 {
-    background: black;
-    color: white;
-    padding: 80px;
-    width: 100%;
-}
-
-.composicao {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 50px;
-    max-width: 1200px;
-    margin: auto;
-}
-
-.imagem-V {
-    flex: 1.4;
-    height: 620px;
-    display: flex;
-    align-items: center;
-}
-
-.lado-direito {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    align-items: flex-end;
-    text-align: right;
-}
-
-.lado-direito h2 {
-    font-size: 52px;
-    font-weight: 500;
-    line-height: 1.3;
-    max-width: 420px;
-}
-
-.lado-direito span {
-    color: #c93cff;
-}
-
-.imagem-arredondada {
-    width: 500px;
-    height: 240px;
-}
-
-.linha {
-    width: 4px;
-    height: 520px;
-    background: white;
-    border-radius: 10px;
-    flex-shrink: 0;
-}
-
-/* ================= SESSÃO 4: EVENTOS DISPONÍVEIS ================= */
 .eventos-home {
     width: 100%;
     min-height: 100vh;
@@ -368,99 +305,6 @@ nav {
     border-radius: 15px;
 }
 
-/* ================= SESSÃO 5: SOBRE ================= */
-.sobre-home {
-    background-color: #000;
-    padding: 100px 20px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.sobre-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    max-width: 1200px;
-}
-
-.separador-sobre {
-    width: 117px;
-    height: 6px;
-    background: #FFFFFF;
-    border-radius: 15px;
-    margin-bottom: 30px;
-}
-
-.textos-sobre {
-    color: #FFFFFF;
-    width: 100%;
-    max-width: 600px;
-    text-align: center;
-}
-
-.textos-sobre h1 {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-    font-size: 40px;
-    padding-bottom: 20px;
-    width: 100%;
-}
-
-.textos-sobre p {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-    font-size: 20px;
-    text-align: justify;
-    line-height: 1.6;
-    width: 100%;
-}
-
-#cor-sobre {
-    color: #CB6CE6;
-}
-
-/* ================= SESSÃO 6: VALORES GLOBAIS (ATUALIZADA) ================= */
-.itens {
-    background-color: #000;
-    color: white;
-    text-align: center;
-    padding: 100px 20px;
-    width: 100%;
-}
-
-.itens h1 {
-    font-size: 60px;
-    letter-spacing: 3px;
-    margin-bottom: 60px;
-    font-weight: bold;
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 75px;
-    max-width: 1100px;
-    margin: auto;
-}
-
-.item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.item svg {
-    font-size: 100px;
-    margin-bottom: 15px;
-}
-
-.item p {
-    font-size: 30px;
-}
-
-/* ================= RESPONSIVIDADE GERAL ================= */
 @media (max-width: 768px) {
     .main-container-s2, .composicao {
         flex-direction: column;
