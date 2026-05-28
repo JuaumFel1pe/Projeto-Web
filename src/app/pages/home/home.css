@@ -49,12 +49,20 @@ nav {
 .barra-pesquisa {
     width: 550px;
     height: 40px;
-    background: #f1f1f1;
+    background: #e8e8e8; /* Este é o ponto chave: um cinza claro perceptível */
+    border: 1px solid #dcdcdc; /* Adicionei uma borda sutil para definir melhor o limite */
     border-radius: 30px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 15px;
+    transition: background 0.3s ease; /* Transição suave */
+}
+
+/* Dica: Adicione este efeito de destaque para o usuário saber que clicou na barra */
+.barra-pesquisa:focus-within {
+    background: #dfdfdf; 
+    border-color: #bc5eff; /* O roxo da sua marca para dar destaque */
 }
 
 .barra-pesquisa input {
