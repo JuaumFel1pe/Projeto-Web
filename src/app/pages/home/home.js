@@ -1,31 +1,24 @@
-const navButtons = document.getElementById("nav-buttons");
+document.addEventListener('DOMContentLoaded', () => {
+    const inputPesquisa = document.querySelector('.barra-pesquisa input');
+    const iconeLupa = document.getElementById('lupa');
 
-const usuarioLogado = localStorage.getItem("usuarioLogado");
+    function realizarBusca() {
+        const termo = inputPesquisa.value.trim();
+        if (termo !== "") {
+            console.log('Home procurando por:', termo);
+        }
+    }
 
-/* VERIFICA LOGIN */
+    iconeLupa.addEventListener('click', realizarBusca);
+    inputPesquisa.addEventListener('keypress', (event) => {
+        if (event.key === 'Enter') realizarBusca();
+    });
 
-if (usuarioLogado) {
-  navButtons.innerHTML = `
-
-<div class="perfil">
-
-  <img src="https://icones.pro/wp-content/uploads/2021/02/symbole-masculin-icone-l-utilisateur-violet.png" class="foto-perfil">
-
-  <span class = "nome-usuario">${usuarioLogado}</span>
-
-  <button onclick="logout()" class="btn-nav">
-    Sair
-  </button>
-
-</div>
-
-`;
-}
-
-/* LOGOUT */
-
-function logout() {
-  localStorage.removeItem("usuarioLogado");
-
-  window.location.reload();
-}
+    const cards = document.querySelectorAll('.card-ev');
+    cards.forEach(card => {
+        card.addEventListener('click', () => {
+            const nomeEvento = card.querySelector('.titulo-card-ev').textContent;
+            console.log('Redirecionando para o evento:', nomeEvento);
+        });
+    });
+});
