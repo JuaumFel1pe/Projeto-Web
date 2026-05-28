@@ -1,4 +1,4 @@
-/* ================= RESET GERAL ================= */
+/* ================= RESET & BASE ================= */
 * {
     margin: 0;
     padding: 0;
@@ -10,6 +10,20 @@ body {
     background: #000;
     color: white;
     overflow-x: hidden;
+}
+
+/* Configuração padrão para todas as seções escuras */
+.sessao2-home, .sessao3, .sobre-home, .itens {
+    background-color: #000;
+    width: 100%;
+    padding: 80px 20px;
+}
+
+/* Classes utilitárias para os separadores visuais */
+.separador-card-ev, #separador-ev, .separador-sobre {
+    height: 6px;
+    border-radius: 15px;
+    background: #2A0D62;
 }
 
 /* ================= NAVBAR / CABEÇALHO ================= */
@@ -28,12 +42,8 @@ nav {
 }
 
 .logo-pesquisa {
-    display: flex;
-    align-items: center;
-    gap: 30px;
     width: 45px;
     height: 45px;
-    text-decoration: none;
 }
 
 .barra-pesquisa {
@@ -91,9 +101,7 @@ nav {
 .hero {
     width: 100%;
     height: 100vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.75)), url("fundo.jpg");
-    background-size: cover;
-    background-position: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.75)), url("fundo.jpg") center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -101,15 +109,8 @@ nav {
     padding-top: 75px;
 }
 
-.hero-content {
-    max-width: 900px;
-}
-
-.hero-content span {
-    font-size: 20px;
-    letter-spacing: 2px;
-    color: white;
-}
+.hero-content { max-width: 900px; }
+.hero-content span { font-size: 20px; letter-spacing: 2px; }
 
 .hero-content h1 {
     font-size: 90px;
@@ -120,11 +121,7 @@ nav {
     text-transform: uppercase;
 }
 
-.hero-content p {
-    font-size: 35px;
-    line-height: 45px;
-    margin-bottom: 40px;
-}
+.hero-content p { font-size: 35px; line-height: 45px; margin-bottom: 40px; }
 
 .hero-btn {
     width: 220px;
@@ -147,37 +144,22 @@ nav {
 }
 
 /* ================= SESSÃO 2: INTEGRAÇÃO CULTURAL ================= */
-.sessao2-home {
-    background-color: #000000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 70vh;
-    width: 100%;
-    padding: 80px 0px;
-}
-
 .main-container-s2 {
     display: flex;
     width: 100%;
     max-width: 1200px; 
     padding: 40px;
+    margin: auto;
 }
 
 .text-column-s2 {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    padding-top: 20px;
     max-width: 400px;
     width: 100%;
 }
 
-.title-wrapper-s2 {
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 30px;
-}
+.title-wrapper-s2 { display: flex; margin-bottom: 30px; }
 
 .purple-line-s2 {
     width: 6px;
@@ -193,48 +175,14 @@ nav {
     font-weight: bold;
     text-transform: uppercase;
     line-height: 1.1;
-    letter-spacing: 1px;
 }
 
-.small-image-box-s2 {
-    width: 100%;
-    height: 100%;
-    border-radius: 20px;
-    overflow: hidden;
-}
-
-.small-image-box-s2 svg {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.image-column-s2 {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
-}
-
-.main-collage-box-s2 {
-    width: 100%;
-    max-width: 600px;
-}
-
-.main-collage-box-s2 svg {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: contain;
-}
+.small-image-box-s2 { width: 100%; border-radius: 20px; overflow: hidden; }
+.small-image-box-s2 svg, .main-collage-box-s2 svg { width: 100%; height: auto; display: block; object-fit: cover; }
+.image-column-s2 { flex: 1; display: flex; justify-content: flex-end; }
+.main-collage-box-s2 { width: 100%; max-width: 600px; }
 
 /* ================= SESSÃO 3: EXPERIÊNCIAS ================= */
-.sessao3 {
-    background: black;
-    color: white;
-    padding: 80px;
-    width: 100%;
-}
-
 .composicao {
     display: flex;
     align-items: center;
@@ -244,12 +192,7 @@ nav {
     margin: auto;
 }
 
-.imagem-V {
-    flex: 1.4;
-    height: 620px;
-    display: flex;
-    align-items: center;
-}
+.imagem-V { flex: 1.4; height: 620px; display: flex; align-items: center; }
 
 .lado-direito {
     flex: 1;
@@ -260,21 +203,9 @@ nav {
     text-align: right;
 }
 
-.lado-direito h2 {
-    font-size: 52px;
-    font-weight: 500;
-    line-height: 1.3;
-    max-width: 420px;
-}
-
-.lado-direito span {
-    color: #c93cff;
-}
-
-.imagem-arredondada {
-    width: 500px;
-    height: 240px;
-}
+.lado-direito h2 { font-size: 52px; font-weight: 500; line-height: 1.3; max-width: 420px; }
+.lado-direito span { color: #c93cff; }
+.imagem-arredondada { width: 500px; height: 240px; }
 
 .linha {
     width: 4px;
@@ -286,12 +217,8 @@ nav {
 
 /* ================= SESSÃO 4: EVENTOS DISPONÍVEIS ================= */
 .eventos-home {
-    width: 100%;
     min-height: 100vh;
-    background-image: url('fundo_eventos_disponiveis.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+    background: url('fundo_eventos_disponiveis.png') center/cover no-repeat;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -299,43 +226,27 @@ nav {
     padding: 100px 20px;
 }
 
-#separador-ev {
-    width: 12%;
-    height: 6px;
-    text-align: center;
-    background: #2A0D62;
-    border-radius: 15px;
-    margin-bottom: 15px;
-}
+#separador-ev { width: 12%; margin-bottom: 15px; }
 
 .titulo-ev {
-    font-weight: 800;
     font-size: 48px;
-    line-height: 60px;
+    font-weight: 800;
     text-align: center;
-    color: #fff;
     -webkit-text-stroke: 2px #11032B;
     margin-bottom: 30px;
 }
 
-#cor-ev {
-    color: #6C5893;
-}
+#cor-ev { color: #6C5893; }
 
 .eventos-container-ev {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: stretch;
     width: 70%;
     gap: 20px;
-    padding: 20px 0px;
 }
 
 .card-ev {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
     align-items: center;
     flex: 1;
     padding: 15px;
@@ -343,7 +254,7 @@ nav {
     border: 2px solid #000;
     border-radius: 60px 60px 80px 80px;
     text-decoration: none;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: 0.2s;
 }
 
 .card-ev:hover {
@@ -359,83 +270,34 @@ nav {
     font-weight: 600;
 }
 
-.separador-card-ev {
-    width: 150px;
-    height: 6px;
-    margin-top: 20px;
-    text-align: center;
-    background: #2A0D62;
-    border-radius: 15px;
-}
+.separador-card-ev { width: 150px; margin-top: 20px; }
 
 /* ================= SESSÃO 5: SOBRE ================= */
-.sobre-home {
-    background-color: #000;
-    padding: 100px 20px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+.sobre-home { display: flex; flex-direction: column; align-items: center; }
 
 .sobre-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    width: 100%;
     max-width: 1200px;
 }
 
-.separador-sobre {
-    width: 117px;
-    height: 6px;
-    background: #FFFFFF;
-    border-radius: 15px;
-    margin-bottom: 30px;
-}
+.separador-sobre { width: 117px; background: #FFFFFF; margin-bottom: 30px; }
 
-.textos-sobre {
-    color: #FFFFFF;
-    width: 100%;
-    max-width: 600px;
-    text-align: center;
-}
-
-.textos-sobre h1 {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-    font-size: 40px;
-    padding-bottom: 20px;
-    width: 100%;
-}
+.textos-sobre { max-width: 600px; text-align: center; }
+.textos-sobre h1 { font-size: 40px; padding-bottom: 20px; }
 
 .textos-sobre p {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
     font-size: 20px;
     text-align: justify;
     line-height: 1.6;
-    width: 100%;
 }
 
-#cor-sobre {
-    color: #CB6CE6;
-}
+#cor-sobre { color: #CB6CE6; }
 
-/* ================= SESSÃO 6: VALORES GLOBAIS (ATUALIZADA) ================= */
-.itens {
-    background-color: #000;
-    color: white;
-    text-align: center;
-    padding: 100px 20px;
-    width: 100%;
-}
-
-.itens h1 {
-    font-size: 60px;
-    letter-spacing: 3px;
-    margin-bottom: 60px;
-    font-weight: bold;
-}
+/* ================= SESSÃO 6: VALORES GLOBAIS ================= */
+.itens { text-align: center; }
+.itens h1 { font-size: 60px; letter-spacing: 3px; margin-bottom: 60px; font-weight: bold; }
 
 .grid {
     display: grid;
@@ -445,80 +307,26 @@ nav {
     margin: auto;
 }
 
-.item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+.item { display: flex; flex-direction: column; align-items: center; }
+.item p { font-size: 30px; }
 
-.item svg {
-    font-size: 100px;
-    margin-bottom: 15px;
-}
-
-.item p {
-    font-size: 30px;
-}
-
-/* ================= RESPONSIVIDADE GERAL ================= */
+/* ================= RESPONSIVIDADE ================= */
 @media (max-width: 768px) {
-    .main-container-s2, .composicao {
+    .main-container-s2, .composicao, .eventos-container-ev, .grid {
         flex-direction: column;
-        padding: 20px;
         align-items: center;
         text-align: center;
-    }
-    .lado-direito {
-        align-items: center;
-        text-align: center;
-    }
-    .imagem-V, .imagem-arredondada {
-        width: 100%;
-        max-width: 500px;
-        height: auto;
-        min-height: 250px;
-    }
-    .linha {
-        display: none;
-    }
-    .title-wrapper-s2 {
-        justify-content: center;
-        text-align: left;
-    }
-    .small-image-box-s2 {
-        margin: 0 auto;
-        max-width: 231px;
-    }
-    .image-column-s2 {
-        justify-content: center;
-        width: 100%;
-        margin-top: 30px;
-    }
-    .eventos-container-ev {
-        flex-direction: column;
         width: 100%;
     }
-    .hero-content h1 {
-        font-size: 50px;
-        line-height: 50px;
-    }
-    .hero-content p {
-        font-size: 22px;
-        line-height: 30px;
-    }
-    .barra-pesquisa {
-        width: 50%;
-    }
-    .textos-sobre p {
-        text-align: center;
-    }
-    /* Responsividade do Grid */
-    .grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-    .itens h1 {
-        font-size: 35px;
-        margin-bottom: 40px;
-    }
+    .grid { grid-template-columns: 1fr; gap: 40px; }
+    .lado-direito, .textos-sobre { align-items: center; text-align: center; }
+    .imagem-V, .imagem-arredondada { width: 100%; max-width: 500px; height: auto; min-height: 250px; }
+    .linha, .purple-line-s2 { display: none; }
+    .title-wrapper-s2 { justify-content: center; }
+    .image-column-s2 { justify-content: center; margin-top: 30px; }
+    .hero-content h1 { font-size: 50px; line-height: 50px; }
+    .hero-content p { font-size: 22px; line-height: 30px; }
+    .barra-pesquisa { width: 50%; }
+    .textos-sobre p { text-align: center; }
+    .itens h1 { font-size: 35px; margin-bottom: 40px; }
 }
