@@ -1,0 +1,120 @@
+/* ================= CONFIGURAÇÃO DA SEÇÃO ================= */
+.produtos-home {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 140px 20px 80px 20px; /* Evita que o conteúdo suma atrás da Navbar fixa */
+}
+
+#separador-prod {
+    width: 12%;
+    height: 6px;
+    background: #2A0D62;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+.titulo-prod {
+    font-weight: 800;
+    font-size: 48px;
+    line-height: 60px;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+#cor-prod {
+    color: #CB6CE6;
+}
+
+/* ================= CONTAINER DOS CARDS ================= */
+.produtos-container-prod {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: stretch;
+    width: 70%;
+    gap: 20px;
+    padding: 20px 0px;
+}
+
+.card-prod {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+    padding: 25px;
+    background-color: #11032B;
+    border: 2px solid #000;
+    border-radius: 60px 60px 80px 80px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-prod:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 20px rgba(203, 108, 230, 0.3);
+}
+
+.card-prod .titulo-card-prod {
+    color: #fff;
+    padding: 20px 10px;
+    font-size: 22px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.separador-card-prod {
+    width: 150px;
+    height: 6px;
+    background: #2A0D62;
+    border-radius: 15px;
+}
+
+.preco-prod {
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+/* ================= BOTÃO ESTILIZADO ================= */
+.btn-comprar-prod {
+    width: 80%;
+    height: 45px;
+    border: 2px solid #CB6CE6;
+    border-radius: 30px;
+    background: transparent;
+    color: #CB6CE6;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-comprar-prod:hover {
+    background: #CB6CE6;
+    color: #000;
+    box-shadow: 0 0 15px #CB6CE6;
+}
+
+/* Deixa o botão "Produto" roxo quando estamos nessa página */
+.btn-nav.ativo {
+    background: #b026ff;
+    color: white;
+}
+
+/* ================= RESPONSIVIDADE ================= */
+@media (max-width: 768px) {
+    .produtos-container-prod {
+        flex-direction: column;
+        width: 100%;
+    }
+    .titulo-prod {
+        font-size: 35px;
+    }
+}

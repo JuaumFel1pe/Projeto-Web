@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho - Galarraga Eventos</title>
+    <link rel="stylesheet" href="../home/home.css">
+    <link rel="stylesheet" href="../produtos/produto.css">
+</head>
+
+<body>
+
+    <nav>
+        <a href="../home/home.html">
+            <img src="https://i.ibb.co/mCKymdJG/Design-sem-nome-removebg-preview.png" alt="logo" class="logo-pesquisa">
+        </a>
+        <div class="barra-pesquisa">
+            <input type="text" placeholder="Pesquisar..." />
+            <img id="lupa" src="https://cdn-icons-png.flaticon.com/512/3183/3183361.png" alt="Lupa de pesquisa" />
+        </div>
+
+        <div class="buttons">
+            <a href="../produtos/produto.html" id="botao-produto" class="btn-nav">Produtos</a>
+
+            <a href="../carrinho/carrinho.html" id="botao-registrar" class="btn-nav">Carrinho</a>
+
+            <a href="../login/login.html?modo=login" id="botao-login" class="btn-nav">Login</a>
+        </div>
+    </nav>
+
+    <section class="produtos-home">
+        <span id="separador-prod"></span>
+
+        <h1 class="titulo-prod"><span id="cor-prod">Seu</span> Carrinho</h1>
+
+        <div class="produtos-container-prod" id="container-carrinho" style="flex-direction: column; align-items: center; width: 100%;">
+            </div>
+
+        <div id="resumo-carrinho" style="display: none; margin-top: 30px; text-align: center; width: 80%;">
+            <h2 style="color: white; margin-bottom: 20px;">Total: <span id="total-carrinho">R$ 0,00</span></h2>
+            <button class="btn-comprar-prod" id="btn-finalizar" style="width: 250px;">Confirmar Compra</button>
+        </div>
+    </section>
+
+    <script src="carrinho.js"></script>
+
+    <footer class="rodape-eventos">
+        <div class="coluna-footer logo-footer">
+            <img src="https://i.ibb.co/mCKymdJG/Design-sem-nome-removebg-preview.png" alt="Galarraga Eventos Logo">
+            <div class="texto-logo-footer">
+                <h2>GALARRAGA</h2>
+                <p>EVENTOS</p>
+            </div>
+        </div>
+
+        <div class="coluna-footer">
+            <p>Av. das Nações Unidas, 5.777, Alto de Pinheiros</p>
+            <p>São Paulo - SP, 05477-900</p>
+            <p>+55 11 3024 9000</p>
+        </div>
+
+        <div class="coluna-footer">
+            <p>Faça parte de uma equipe que vem crescendo cada vez mais.</p>
+            <p>Envie seu currículo para:</p>
+            <p class="email-contato">eventos.galarraga@veneven.com</p>
+        </div>
+
+        <div class="coluna-footer redes-sociais">
+            <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
+    </footer>
+</body>
+
+</html>
