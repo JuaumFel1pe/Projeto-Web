@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produto - Galarraga Eventos</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="produto.css">
+</head>
+<body>
+
+    <nav>
+        <a href="home.html">
+            <img src="https://i.ibb.co/mCKymdJG/Design-sem-nome-removebg-preview.png" alt="logo" class="logo-pesquisa">
+        </a>
+        <div class="barra-pesquisa">
+            <input type="text" placeholder="Pesquisar..." />
+            <img id="lupa" src="https://cdn-icons-png.flaticon.com/512/3183/3183361.png" alt="Lupa de pesquisa" />
+        </div>
+
+        <div class="buttons">
+            <a href="produto.html" id="botao-produto" class="btn-nav ativo">Produto</a>
+            <a href="/registrar" id="botao-registrar" class="btn-nav">Registrar-se</a>
+            <a href="/login" id="botao-login" class="btn-nav">Login</a>
+        </div>
+    </nav>
+
+    <section class="produtos-home">
+        <span id="separador-prod"></span>
+
+        <h1 class="titulo-prod"><span id="cor-prod">Nossos</span> Ingressos</h1>
+
+        <div class="produtos-container-prod">
+            <div class="card-prod" data-id="1" data-preco="250.00">
+                <span class="separador-card-prod"></span>
+                <h3 class="titulo-card-prod">Festa de fim de ano</h3>
+                <p class="preco-prod">R$ 250,00</p>
+                <button class="btn-comprar-prod">Comprar</button>
+            </div>
+
+            <div class="card-prod" data-id="2" data-preco="180.00">
+                <span class="separador-card-prod"></span>
+                <h3 class="titulo-card-prod">Jantar Beneficente</h3>
+                <p class="preco-prod">R$ 180,00</p>
+                <button class="btn-comprar-prod">Comprar</button>
+            </div>
+
+            <div class="card-prod" data-id="3" data-preco="120.00">
+                <span class="separador-card-prod"></span>
+                <h3 class="titulo-card-prod">Laureno "El miedo"</h3>
+                <p class="preco-prod">R$ 120,00</p>
+                <button class="btn-comprar-prod">Comprar</button>
+            </div>
+        </div>
+    </section>
+
+    <script src="produto.js"></script>
+</body>
+</html>
