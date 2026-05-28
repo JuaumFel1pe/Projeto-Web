@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // Barra de pesquisa
     const inputPesquisa = document.querySelector('.barra-pesquisa input');
     const iconeLupa = document.getElementById('lupa');
 
@@ -12,17 +11,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Clique na lupa
     iconeLupa.addEventListener('click', realizarBusca);
 
-    // Enter no teclado
     inputPesquisa.addEventListener('keypress', (event) => {
         if (event.key === 'Enter') {
             realizarBusca();
         }
     });
 
-    // Cards de eventos
     const cards = document.querySelectorAll('.card-ev');
 
     cards.forEach(card => {
