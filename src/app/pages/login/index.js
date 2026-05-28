@@ -58,7 +58,9 @@ function fazerLogin() {
   if (usuario.senha === senha) {
     alert("Login realizado!");
 
-    window.location.href = "../index.html";
+    localStorage.setItem("usuarioLogado", email);
+
+    window.location.href = "../home/home.html";
   } else {
     alert("Senha incorreta");
   }
