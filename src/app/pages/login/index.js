@@ -45,8 +45,10 @@ function fazerLogin() {
   const usuario = JSON.parse(usuarioSalvo);
 
   if (usuario.senha === senha) {
+    /* SALVA O USUÁRIO LOGADO */
+    localStorage.setItem("usuarioLogado", JSON.stringify(usuario));
+
     alert("Login realizado com sucesso!");
-    localStorage.setItem("usuarioLogado", "true");
 
     if (localStorage.getItem("ingressoSelecionado")) {
       window.location.href = "../home/carrinho.html";
