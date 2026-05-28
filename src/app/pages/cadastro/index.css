@@ -1,0 +1,95 @@
+/* ================= RESET E CENTRALIZAÇÃO NO FUNDO PRETO ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #121212; /* Fundo Preto */
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+/* ================= O CARD ESCURO COM BRILHO ROXO (BOX-SHADOW) ================= */
+.login-card {
+    background-color: #1c1c1c; /* Caixa escura */
+    padding: 40px;
+    border-radius: 24px; /* Cantos arredondados */
+    width: 380px; /* Largura aproximada da imagem */
+    text-align: center;
+    /* Efeito de brilho roxo sutil de fundo */
+    box-shadow: 0 0 25px rgba(168, 38, 255, 0.15);
+}
+
+.login-card h2 {
+    color: #ffffff; /* Texto branco */
+    margin-bottom: 25px;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+/* ================= ESTILO DOS INPUTS ================= */
+
+/* Primeiro Input (Claro, igual ao da imagem) */
+.input-group input[type="email"] {
+    width: 100%;
+    height: 50px;
+    background-color: #e8f0fe; /* Cor clara de fundo */
+    border: none;
+    border-radius: 12px;
+    padding: 0 15px;
+    font-size: 16px;
+    color: #000000;
+    outline: none;
+}
+
+/* Segundo Input (Escuro, igual ao da imagem) */
+.input-group input[type="password"] {
+    width: 100%;
+    height: 50px;
+    background-color: #2b2b2b; /* Cor escura de fundo */
+    border: none;
+    border-radius: 12px;
+    padding: 0 15px;
+    font-size: 16px;
+    color: #ffffff;
+    outline: none;
+}
+
+/* ================= ESTILO DO BOTÃO ROXO ================= */
+.btn-entrar {
+    width: 100%;
+    height: 50px;
+    background-color: #a826ff; /* Roxo Vibrante */
+    color: #ffffff; /* Texto branco */
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn-entrar:hover {
+    background-color: #b942ff; /* Roxo mais claro no hover */
+}
+
+.btn-entrar:active {
+    transform: scale(0.98); /* Efeito de clique */
+}

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Produto - Galarraga Eventos</title>
+    <title>Carrinho - Galarraga Eventos</title>
     <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="produto.css">
 </head>
@@ -30,33 +30,21 @@
     <section class="produtos-home">
         <span id="separador-prod"></span>
 
-        <h1 class="titulo-prod"><span id="cor-prod">Nossos</span> Ingressos</h1>
+        <h1 class="titulo-prod"><span id="cor-prod">Seu</span> Carrinho</h1>
 
-        <div class="produtos-container-prod">
-            <div class="card-prod" data-id="1" data-preco="250.00">
+        <div class="produtos-container-prod" id="container-carrinho-vazio">
+            <div class="card-prod" id="card-checkout">
                 <span class="separador-card-prod"></span>
-                <h3 class="titulo-card-prod">Festa de fim de ano</h3>
-                <p class="preco-prod">R$ 250,00</p>
-                <button class="btn-comprar-prod">Comprar</button>
-            </div>
-
-            <div class="card-prod" data-id="2" data-preco="180.00">
-                <span class="separador-card-prod"></span>
-                <h3 class="titulo-card-prod">Jantar Beneficente</h3>
-                <p class="preco-prod">R$ 180,00</p>
-                <button class="btn-comprar-prod">Comprar</button>
-            </div>
-
-            <div class="card-prod" data-id="3" data-preco="120.00">
-                <span class="separador-card-prod"></span>
-                <h3 class="titulo-card-prod">Laureno "El miedo"</h3>
-                <p class="preco-prod">R$ 120,00</p>
-                <button class="btn-comprar-prod">Comprar</button>
+                
+                <h3 class="titulo-card-prod" id="checkout-nome">Carregando ingresso...</h3>
+                <p class="preco-prod" id="checkout-preco">R$ 0,00</p>
+                
+                <button class="btn-comprar-prod" id="btn-finalizar">Confirmar Compra</button>
             </div>
         </div>
     </section>
 
-    <script src="produto.js"></script>
+    <script src="carrinho.js"></script>
 
     <footer class="rodape-eventos">
         <div class="coluna-footer logo-footer">

@@ -1,20 +1,23 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Captura todos os botões de comprar da página
     const botoesComprar = document.querySelectorAll('.btn-comprar-prod');
     
     botoesComprar.forEach(botao => {
         botao.addEventListener('click', (event) => {
-            // Acha o card correspondente ao botão clicado
             const card = event.target.closest('.card-prod');
-            
-            // Pega os dados direto dos atributos data- do HTML
-            const idProduto = card.getAttribute('data-id');
             const nomeProduto = card.querySelector('.titulo-card-prod').textContent;
             const precoProduto = card.getAttribute('data-preco');
 
-            // Executa a ação de compra (pode ser trocado por um redirecionamento ou carrinho)
-            alert(`Ingressos selecionados!\nEvento: ${nomeProduto}\nValor: R$ ${precoProduto}`);
-            console.log(`Produto adicionado - ID: ${idProduto}, Preço: R$ ${precoProduto}`);
+            // Cria o objeto do ingresso selecionado
+            const ingresso = {
+                nome: nomeProduto,
+                preco: parseFloat(precoProduto)
+            };
+
+            // Salva no localStorage (banco de dados do navegador)
+            localStorage.setItem('ingressoSelecionado', JSON.stringify(ingresso));
+
+            // Redireciona direto para a nova página do carrinho
+            window.location.href = 'carrinho.html';
         });
     });
 });
