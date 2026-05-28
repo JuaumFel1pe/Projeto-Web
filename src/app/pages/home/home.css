@@ -281,31 +281,75 @@ nav {
 .separador-card-ev { width: 150px; margin-top: 20px; }
 
 /* ================= SESSÃO 5: SOBRE ================= */
-.sobre-home { display: flex; flex-direction: column; align-items: center; }
+.secao-sobre-original {
+    background-color: #000000;
+    padding: 100px 5%;
+    width: 100%;
+}
 
 .sobre-container {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     max-width: 1200px;
+    margin: 0 auto;
+    gap: 50px;
 }
 
-.separador-sobre { width: 117px; background: #FFFFFF; margin-bottom: 30px; }
+.textos {
+    color: #FFFFFF;
+    flex: 1; /* Ocupa metade da tela */
+}
 
-.textos-sobre { max-width: 600px; text-align: center; }
-.textos-sobre h1 { font-size: 40px; padding-bottom: 20px; }
+#separador-sobre {
+    display: block;
+    width: 117px;
+    height: 6px;
+    background: #FFFFFF;
+    border-radius: 15px;
+    margin-bottom: 25px;
+}
 
-.textos-sobre p {
+.textos h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+#cor-sobre {
+    color: #CB6CE6;
+}
+
+.textos p {
     font-size: 20px;
-    text-align: justify;
     line-height: 1.6;
+    text-align: justify;
 }
 
-#cor-sobre { color: #CB6CE6; }
-
+/* Espaço vazio para a imagem */
+.imagem-container {
+    flex: 1; /* Ocupa a outra metade */
+    min-height: 400px;
+    background-color: #1a1a1a; /* Cor de fundo para o espaço vazio */
+    border-radius: 32px;
+}
 /* ================= SESSÃO 6: VALORES GLOBAIS ================= */
-.itens { text-align: center; }
-.itens h1 { font-size: 60px; letter-spacing: 3px; margin-bottom: 60px; font-weight: bold; }
+.itens-section {
+    width: 100%;
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.itens {
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.itens h1 {
+    font-size: 60px;
+    letter-spacing: 3px;
+    margin-bottom: 60px;
+}
 
 .grid {
     display: grid;
@@ -315,8 +359,34 @@ nav {
     margin: auto;
 }
 
-.item { display: flex; flex-direction: column; align-items: center; }
-.item p { font-size: 30px; }
+.item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.item p {
+    font-size: 30px;
+    transition: 0.3s; /* Transição suave */
+    cursor: default;
+}
+
+/* Efeito ao passar o mouse */
+.item p:hover {
+    color: #CB6CE6; /* Roxo da sua identidade */
+    transform: scale(1.1);
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 30px;
+    }
+    .itens h1 {
+        font-size: 40px;
+    }
+}
 
 /* ================= RESPONSIVIDADE ================= */
 @media (max-width: 768px) {
