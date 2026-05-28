@@ -1,417 +1,676 @@
 /* ================= RESET & BASE ================= */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #000;
-    color: white;
-    overflow-x: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #000;
+  color: white;
+  overflow-x: hidden;
 }
 
 /* Configuração padrão para todas as seções escuras */
-.sessao2-home, .sessao3, .sobre-home, .itens {
-    background-color: #000;
-    width: 100%;
-    padding: 80px 20px;
+.sessao2-home,
+.sessao3,
+.sobre-home,
+.itens {
+  background-color: #000;
+  width: 100%;
+  padding: 80px 20px;
 }
 
 /* Classes utilitárias para os separadores visuais */
-.separador-card-ev, #separador-ev, .separador-sobre {
-    height: 6px;
-    border-radius: 15px;
-    background: #2A0D62;
+.separador-card-ev,
+#separador-ev,
+.separador-sobre {
+  height: 6px;
+  border-radius: 15px;
+  background: #2a0d62;
 }
 
 /* ================= NAVBAR / CABEÇALHO ================= */
 nav {
-    width: 100%;
-    height: 75px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 40px;
-    background: white;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
+  width: 100%;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  background: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
 }
 
 .logo-pesquisa {
-    width: 45px;
-    height: 45px;
+  width: 45px;
+  height: 45px;
 }
 
 .barra-pesquisa {
     width: 550px;
     height: 40px;
-    background: #f1f1f1;
+    background: #e8e8e8; /* Este é o ponto chave: um cinza claro perceptível */
+    border: 1px solid #dcdcdc; /* Adicionei uma borda sutil para definir melhor o limite */
     border-radius: 30px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 15px;
+    transition: background 0.3s ease; /* Transição suave */
+}
+
+/* Dica: Adicione este efeito de destaque para o usuário saber que clicou na barra */
+.barra-pesquisa:focus-within {
+    background: #dfdfdf; 
+    border-color: #bc5eff; /* O roxo da sua marca para dar destaque */
 }
 
 .barra-pesquisa input {
-    width: 100%;
-    border: none;
-    outline: none;
-    background: transparent;
-    font-size: 15px;
-    color: #333;
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 15px;
+  color: #333;
 }
 
 #lupa {
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
 }
 
 .buttons {
-    display: flex;
-    gap: 20px;
+  display: flex;
+  gap: 20px;
 }
 
 .btn-nav {
-    width: 130px;
-    height: 40px;
-    border: 2px solid #b026ff;
-    border-radius: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    color: #b026ff;
-    font-weight: 500;
-    transition: 0.3s;
+  min-width: 130px;
+  height: 40px;
+  padding: 0 20px;
+
+  border: 2px solid #b026ff;
+  border-radius: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  text-decoration: none;
+  color: #b026ff;
+  font-weight: 500;
+
+  transition: 0.3s;
 }
 
 .btn-nav:hover {
-    background: #b026ff;
-    color: white;
-    box-shadow: 0 0 15px #b026ff;
+  background: #b026ff;
+  color: white;
+  box-shadow: 0 0 15px #b026ff;
 }
 
 /* ================= HERO SECTION (SESSÃO 1) ================= */
 .hero {
-    width: 100%;
-    height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.75)), url("fundo.jpg") center/cover no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding-top: 75px;
+  width: 100%;
+  height: 100vh;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.75)),
+    url("fundo.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-top: 75px;
 }
 
-.hero-content { max-width: 900px; }
-.hero-content span { font-size: 20px; letter-spacing: 2px; }
+.hero-content {
+  max-width: 900px;
+}
+.hero-content span {
+  font-size: 20px;
+  letter-spacing: 2px;
+}
 
 .hero-content h1 {
-    font-size: 90px;
-    line-height: 90px;
-    margin: 30px 0;
-    color: transparent;
-    -webkit-text-stroke: 2px #b026ff;
-    text-transform: uppercase;
+  font-size: 90px;
+  line-height: 90px;
+  margin: 30px 0;
+  color: transparent;
+  -webkit-text-stroke: 2px #b026ff;
+  text-transform: uppercase;
 }
 
-.hero-content p { font-size: 35px; line-height: 45px; margin-bottom: 40px; }
+.hero-content p {
+  font-size: 35px;
+  line-height: 45px;
+  margin-bottom: 40px;
+}
 
 .hero-btn {
-    width: 220px;
-    height: 55px;
-    margin: auto;
-    border: 2px solid #b026ff;
-    border-radius: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #b026ff;
-    text-decoration: none;
-    transition: 0.3s;
+  width: 220px;
+  height: 55px;
+  margin: auto;
+  border: 2px solid #b026ff;
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #b026ff;
+  text-decoration: none;
+  transition: 0.3s;
 }
 
 .hero-btn:hover {
-    background: #b026ff;
-    color: white;
-    box-shadow: 0 0 20px #b026ff;
+  background: #b026ff;
+  color: white;
+  box-shadow: 0 0 20px #b026ff;
 }
 
 /* ================= SESSÃO 2: INTEGRAÇÃO CULTURAL ================= */
 .main-container-s2 {
-    display: flex;
-    width: 100%;
-    max-width: 1200px; 
-    padding: 40px;
-    margin: auto;
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  padding: 40px;
+  margin: auto;
 }
 
 .text-column-s2 {
-    display: flex;
-    flex-direction: column;
-    max-width: 400px;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  width: 100%;
 }
 
-.title-wrapper-s2 { display: flex; margin-bottom: 30px; }
+.title-wrapper-s2 {
+  display: flex;
+  margin-bottom: 30px;
+}
 
 .purple-line-s2 {
-    width: 6px;
-    min-height: 200px;
-    background-color: #D612DC;
-    margin-right: 15px;
-    flex-shrink: 0;
+  width: 6px;
+  min-height: 200px;
+  background-color: #d612dc;
+  margin-right: 15px;
+  flex-shrink: 0;
 }
 
 .title-text-s2 {
-    color: #D612DC;
-    font-size: 2.2rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    line-height: 1.1;
+  color: #d612dc;
+  font-size: 2.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 1.1;
 }
 
-.small-image-box-s2 { width: 100%; border-radius: 20px; overflow: hidden; }
-.small-image-box-s2 svg, .main-collage-box-s2 svg { width: 100%; height: auto; display: block; object-fit: cover; }
-.image-column-s2 { flex: 1; display: flex; justify-content: flex-end; }
-.main-collage-box-s2 { width: 100%; max-width: 600px; }
+.small-image-box-s2 {
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.small-image-box-s2 svg,
+.main-collage-box-s2 svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+.image-column-s2 {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+.main-collage-box-s2 {
+  width: 100%;
+  max-width: 600px;
+}
 
 /* ================= SESSÃO 3: EXPERIÊNCIAS ================= */
 .composicao {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 50px;
-    max-width: 1200px;
-    margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  max-width: 1200px;
+  margin: auto;
 }
 
-.imagem-V { flex: 1.4; height: 620px; display: flex; align-items: center; }
+.imagem-V {
+  flex: 1.4;
+  height: 620px;
+  display: flex;
+  align-items: center;
+}
 
 .lado-direito {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    align-items: flex-end;
-    text-align: right;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: flex-end;
+  text-align: right;
 }
 
-.lado-direito h2 { font-size: 52px; font-weight: 500; line-height: 1.3; max-width: 420px; }
-.lado-direito span { color: #c93cff; }
-.imagem-arredondada { width: 500px; height: 240px; }
+.lado-direito h2 {
+  font-size: 52px;
+  font-weight: 500;
+  line-height: 1.3;
+  max-width: 420px;
+}
+.lado-direito span {
+  color: #c93cff;
+}
+.imagem-arredondada {
+  width: 500px;
+  height: 240px;
+}
 
 .linha {
-    width: 4px;
-    height: 520px;
-    background: white;
-    border-radius: 10px;
-    flex-shrink: 0;
+  width: 4px;
+  height: 520px;
+  background: white;
+  border-radius: 10px;
+  flex-shrink: 0;
 }
 
 /* ================= SESSÃO 4: EVENTOS DISPONÍVEIS ================= */
 .eventos-home {
-    min-height: 100vh;
-    background: url('fundo_eventos_disponiveis.png') center/cover no-repeat;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 100px 20px;
+  min-height: 100vh;
+  background: url("fundo_eventos_disponiveis.png") center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 20px;
 }
 
-#separador-ev { width: 12%; margin-bottom: 15px; }
+#separador-ev {
+  width: 12%;
+  margin-bottom: 15px;
+}
 
 .titulo-ev {
-    font-size: 48px;
-    font-weight: 800;
-    text-align: center;
-    -webkit-text-stroke: 2px #11032B;
-    margin-bottom: 30px;
+  font-size: 48px;
+  font-weight: 800;
+  text-align: center;
+  -webkit-text-stroke: 2px #11032b;
+  margin-bottom: 30px;
 }
 
-#cor-ev { color: #6C5893; }
+#cor-ev {
+  color: #6c5893;
+}
 
 .eventos-container-ev {
-    display: flex;
-    width: 70%;
-    gap: 20px;
+  display: flex;
+  width: 70%;
+  gap: 20px;
 }
 
 .card-ev {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex: 1;
-    padding: 15px;
-    background-color: #11032B;
-    border: 2px solid #000;
-    border-radius: 60px 60px 80px 80px;
-    text-decoration: none;
-    transition: 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  padding: 15px;
+  background-color: #11032b;
+  border: 2px solid #000;
+  border-radius: 60px 60px 80px 80px;
+  text-decoration: none;
+  transition: 0.2s;
 }
 
 .card-ev:hover {
-    transform: translateY(-5px);
-    box-shadow: 0px 8px 20px rgba(108, 88, 147, 0.4);
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 20px rgba(108, 88, 147, 0.4);
 }
 
 .card-img-ev {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    border-radius: 50px 50px 0 0;
-    display: block;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 50px 50px 0 0;
+  display: block;
 }
 
 .card-ev .titulo-card-ev {
-    color: #fff;
-    padding: 40px 20px;
-    font-size: 20px;
-    text-align: center;
-    font-weight: 600;
+  color: #fff;
+  padding: 40px 20px;
+  font-size: 20px;
+  text-align: center;
+  font-weight: 600;
 }
 
-.separador-card-ev { width: 150px; margin-top: 20px; }
+.separador-card-ev {
+  width: 150px;
+  margin-top: 20px;
+}
 
 /* ================= SESSÃO 5: SOBRE ================= */
-.sobre-home { display: flex; flex-direction: column; align-items: center; }
+.secao-sobre-original {
+  background-color: #000000;
+  padding: 100px 5%;
+  width: 100%;
+}
 
 .sobre-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 50px;
 }
 
-.separador-sobre { width: 117px; background: #FFFFFF; margin-bottom: 30px; }
-
-.textos-sobre { max-width: 600px; text-align: center; }
-.textos-sobre h1 { font-size: 40px; padding-bottom: 20px; }
-
-.textos-sobre p {
-    font-size: 20px;
-    text-align: justify;
-    line-height: 1.6;
+.textos {
+  color: #ffffff;
+  flex: 1; /* Ocupa metade da tela */
 }
 
-#cor-sobre { color: #CB6CE6; }
+#separador-sobre {
+  display: block;
+  width: 117px;
+  height: 6px;
+  background: #ffffff;
+  border-radius: 15px;
+  margin-bottom: 25px;
+}
 
+.textos h1 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+#cor-sobre {
+  color: #cb6ce6;
+}
+
+.textos p {
+  font-size: 20px;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+/* Espaço vazio para a imagem */
+.imagem-container {
+  flex: 1; /* Ocupa a outra metade */
+  min-height: 400px;
+  background-color: #1a1a1a; /* Cor de fundo para o espaço vazio */
+  border-radius: 32px;
+}
 /* ================= SESSÃO 6: VALORES GLOBAIS ================= */
-.itens { text-align: center; }
-.itens h1 { font-size: 60px; letter-spacing: 3px; margin-bottom: 60px; font-weight: bold; }
+.itens-section {
+  width: 100%;
+  background-color: #000;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.itens {
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.itens h1 {
+  font-size: 60px;
+  letter-spacing: 3px;
+  margin-bottom: 60px;
+}
 
 .grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 75px;
-    max-width: 1100px;
-    margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 75px;
+  max-width: 1100px;
+  margin: auto;
 }
 
-.item { display: flex; flex-direction: column; align-items: center; }
-.item p { font-size: 30px; }
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.item p {
+  font-size: 30px;
+  transition: 0.3s; /* Transição suave */
+  cursor: default;
+}
+
+/* Efeito ao passar o mouse */
+.item p:hover {
+  color: #cb6ce6; /* Roxo da sua identidade */
+  transform: scale(1.1);
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 30px;
+  }
+  .itens h1 {
+    font-size: 40px;
+  }
+}
 
 /* ================= RESPONSIVIDADE ================= */
 @media (max-width: 768px) {
-    .main-container-s2, .composicao, .eventos-container-ev, .grid {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        width: 100%;
-    }
-    .grid { grid-template-columns: 1fr; gap: 40px; }
-    .lado-direito, .textos-sobre { align-items: center; text-align: center; }
-    .imagem-V, .imagem-arredondada { width: 100%; max-width: 500px; height: auto; min-height: 250px; }
-    .linha, .purple-line-s2 { display: none; }
-    .title-wrapper-s2 { justify-content: center; }
-    .image-column-s2 { justify-content: center; margin-top: 30px; }
-    .hero-content h1 { font-size: 50px; line-height: 50px; }
-    .hero-content p { font-size: 22px; line-height: 30px; }
-    .barra-pesquisa { width: 50%; }
-    .textos-sobre p { text-align: center; }
-    .itens h1 { font-size: 35px; margin-bottom: 40px; }
+  .main-container-s2,
+  .composicao,
+  .eventos-container-ev,
+  .grid {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .lado-direito,
+  .textos-sobre {
+    align-items: center;
+    text-align: center;
+  }
+  .imagem-V,
+  .imagem-arredondada {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    min-height: 250px;
+  }
+  .linha,
+  .purple-line-s2 {
+    display: none;
+  }
+  .title-wrapper-s2 {
+    justify-content: center;
+  }
+  .image-column-s2 {
+    justify-content: center;
+    margin-top: 30px;
+  }
+  .hero-content h1 {
+    font-size: 50px;
+    line-height: 50px;
+  }
+  .hero-content p {
+    font-size: 22px;
+    line-height: 30px;
+  }
+  .barra-pesquisa {
+    width: 50%;
+  }
+  .textos-sobre p {
+    text-align: center;
+  }
+  .itens h1 {
+    font-size: 35px;
+    margin-bottom: 40px;
+  }
 }
 /* ================= ESTILO DO RODAPÉ (FOOTER) BRANCO ================= */
 .rodape-eventos {
-    width: 100%;
-    background-color: #ffffff; /* Fundo totalmente Branco igual à foto */
-    border-top: 1px solid #e0e0e0; /* Linha divisória clara */
-    padding: 30px 5%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-top: 50px;
+  width: 100%;
+  background-color: #ffffff; /* Fundo totalmente Branco igual à foto */
+  border-top: 1px solid #e0e0e0; /* Linha divisória clara */
+  padding: 30px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 50px;
 }
 
 /* Configuração dos blocos de texto */
 .coluna-footer {
-    flex: 1;
-    min-width: 200px;
-    color: #000000; /* Todos os textos em Preto */
-    font-size: 14px;
-    line-height: 1.6;
+  flex: 1;
+  min-width: 200px;
+  color: #000000; /* Todos os textos em Preto */
+  font-size: 14px;
+  line-height: 1.6;
 }
 
 /* Bloco da Logo */
 .logo-footer {
-    display: flex;
-    align-items: center;
-    gap: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 .logo-footer img {
-    width: 50px;
-    height: auto;
-    /* Se a sua logo original for branca e sumir no fundo branco, 
+  width: 50px;
+  height: auto;
+  /* Se a sua logo original for branca e sumir no fundo branco, 
        esse filtro abaixo deixa ela preta. Se não precisar, pode apagar a linha abaixo */
-    filter: brightness(0); 
+  filter: brightness(0);
 }
 
 .texto-logo-footer h2 {
-    color: #000000; /* Nome GALARRAGA em Preto */
-    font-size: 16px;
-    letter-spacing: 1px;
-    margin: 0;
-    font-weight: bold;
+  color: #000000; /* Nome GALARRAGA em Preto */
+  font-size: 16px;
+  letter-spacing: 1px;
+  margin: 0;
+  font-weight: bold;
 }
 
 .texto-logo-footer p {
-    color: #000000; /* Nome EVENTOS em Preto igual à imagem */
-    font-size: 12px;
-    margin: 0;
-    font-weight: bold;
+  color: #000000; /* Nome EVENTOS em Preto igual à imagem */
+  font-size: 12px;
+  margin: 0;
+  font-weight: bold;
 }
 
 /* Destaque no e-mail de contato */
 .email-contato {
-    color: #000000;
-    font-weight: bold;
+  color: #000000;
+  font-weight: bold;
 }
 
 /* Configuração dos Ícones das Redes Sociais */
 .redes-sociais {
-    display: flex;
-    justify-content: flex-end;
-    gap: 20px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
 }
 
 .redes-sociais a {
-    color: #000000; /* Ícones pretos da imagem */
-    font-size: 22px;
-    text-decoration: none;
-    transition: transform 0.2s;
+  color: #000000; /* Ícones pretos da imagem */
+  font-size: 22px;
+  text-decoration: none;
+  transition: transform 0.2s;
 }
 
 .redes-sociais a:hover {
-    transform: translateY(-3px);
-    opacity: 0.7; /* Efeito sutil ao passar o mouse */
+  transform: translateY(-3px);
+  opacity: 0.7; /* Efeito sutil ao passar o mouse */
+}
+
+/* ================= USUÁRIO LOGADO ================= */
+
+.usuario-logado {
+  height: 40px;
+  padding: 0 18px;
+
+  border-radius: 30px;
+
+  background: linear-gradient(135deg, #2a0d62, #b026ff);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+
+  box-shadow: 0 0 15px rgba(176, 38, 255, 0.4);
+
+  transition: 0.3s;
+}
+
+.usuario-logado:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(176, 38, 255, 0.7);
+}
+
+/* Ícone opcional */
+.usuario-logado i {
+  margin-right: 8px;
+  color: #fff;
+}
+
+/* ================= BOTÃO SAIR ================= */
+
+.btn-sair {
+  background: linear-gradient(135deg, #2a0d62, #ff2626);
+  border: none;
+  color: white;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  box-shadow: 0 0 15px rgba(255, 38, 38, 0.3);
+}
+
+.btn-sair:hover {
+  background: linear-gradient(135deg, #ff2626, #2a0d62);
+
+  color: white;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 0 20px rgba(255, 38, 38, 0.6);
+}
+
+.btn-sair i {
+  font-size: 14px;
+}
+
+.btn-nav,
+.btn-sair,
+.usuario-logado {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-sair i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+  top: 15px;
 }
