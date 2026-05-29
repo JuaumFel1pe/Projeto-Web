@@ -4,7 +4,6 @@ const modo = params.get("modo");
 const loginForm = document.getElementById("login-form");
 const registroForm = document.getElementById("registro-form");
 
-/* CONFIGURA O FORMULÁRIO INICIAL */
 if (modo === "registro") {
   loginForm.style.display = "none";
   registroForm.style.display = "block";
@@ -13,13 +12,11 @@ if (modo === "registro") {
   loginForm.style.display = "block";
 }
 
-/* FUNÇÃO DE VALIDAÇÃO DE E-MAIL */
 function validarEmail(email) {
   const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return regex.test(email);
 }
 
-/* REGISTRAR */
 function registrar() {
   // O .trim() remove espaços em branco que o usuário possa ter digitado sem querer no início ou fim
   const email = document.getElementById("registro-email").value.trim();
@@ -49,7 +46,6 @@ function registrar() {
   window.location.href = "login.html?modo=login";
 }
 
-/* LOGIN */
 function fazerLogin() {
   const email = document.getElementById("login-email").value.trim();
   const senha = document.getElementById("login-senha").value.trim();
@@ -75,7 +71,7 @@ function fazerLogin() {
   const usuario = JSON.parse(usuarioSalvo);
 
   if (usuario.senha === senha) {
-    /* SALVA O USUÁRIO LOGADO */
+    // SALVA O USUÁRIO LOGADO 
     localStorage.setItem("usuarioLogado", JSON.stringify(usuario));
 
     alert("Login realizado com sucesso!");

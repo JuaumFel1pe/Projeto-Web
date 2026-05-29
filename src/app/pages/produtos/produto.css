@@ -7,7 +7,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 140px 20px 80px 20px; /* Evita que o conteúdo suma atrás da Navbar fixa */
+    padding: 140px 20px 80px 20px;
 }
 
 #separador-prod {

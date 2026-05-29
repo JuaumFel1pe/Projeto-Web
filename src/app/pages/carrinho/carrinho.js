@@ -2,36 +2,36 @@ document.addEventListener('DOMContentLoaded', () => {
     // Inicia a renderização assim que a página carrega
     renderizarCarrinho();
 
-// Pega o usuário logado no localStorage
-  const usuarioLogado = JSON.parse(localStorage.getItem("usuarioLogado"));
+    // Pega o usuário logado no localStorage
+    const usuarioLogado = JSON.parse(localStorage.getItem("usuarioLogado"));
 
-  const botaoLogin = document.getElementById("botao-login");
-  const botaoUsuario = document.getElementById("botao-usuario");
-
-  if (usuarioLogado) {
-    // Esconde o botão de Login
-    if (botaoLogin) botaoLogin.style.display = "none";
-
-    // Mostra o botão único com o email do usuário
-    if (botaoUsuario) {
-      botaoUsuario.style.display = "flex";
-      
-      // Insere o ícone de usuário e o email no botão
-      botaoUsuario.innerHTML = `<i class="fas fa-user" style="margin-right: 8px;"></i> ${usuarioLogado.email}`;
-
-      // Configura o evento de clique para fazer o Logout
-      botaoUsuario.addEventListener("click", (e) => {
-        e.preventDefault(); 
+    const botaoLogin = document.getElementById("botao-login");
+    const botaoUsuario = document.getElementById("botao-usuario");
+console.log(JSON.parse(localStorage.getItem("usuarioLogado")))
+    if (usuarioLogado) {
+        // Verifica se o botão existe, e se existe, esconde o botão de Login
+        if (botaoLogin) botaoLogin.style.display = "none";
         
-        // Confirmação simples para evitar cliques acidentais
-        if(confirm("Deseja realmente sair da sua conta?")) {
-            localStorage.removeItem("usuarioLogado");
-            alert("Você saiu da conta!");
-            window.location.reload(); // Recarrega a página para voltar ao estado deslogado
+        //Verifica se o botão existe, e se existe, mostra o botão único com o email do usuário
+        if (botaoUsuario) {
+            botaoUsuario.style.display = "flex";
+
+            // Insere o ícone de usuário e o email no botão
+            botaoUsuario.innerHTML = `<i class="fas fa-user" style="margin-right: 8px;"></i> ${usuarioLogado.email}`;
+
+            // Configura o evento de clique para fazer o Logout
+            botaoUsuario.addEventListener("click", (e) => {
+                e.preventDefault();
+
+                // Confirmação simples para evitar cliques acidentais
+                if (confirm("Deseja realmente sair da sua conta?")) {
+                    localStorage.removeItem("usuarioLogado");
+                    alert("Você saiu da conta!");
+                    window.location.reload(); // Recarrega a página para voltar ao estado deslogado
+                }
+            });
         }
-      });
     }
-  }
 });
 
 // Função principal que desenha os itens na tela
@@ -45,7 +45,7 @@ function renderizarCarrinho() {
     let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
 
     // Limpa a tela antes de recriar os itens
-    container.innerHTML = ''; 
+    container.innerHTML = '';
 
     if (carrinho.length > 0) {
         resumo.style.display = 'block'; // Mostra a área de total
@@ -59,7 +59,7 @@ function renderizarCarrinho() {
             const card = document.createElement('div');
             card.className = 'card-prod';
             // Ajustes de estilo para ficar em formato de lista (horizontal)
-            card.style.flexDirection = 'row'; 
+            card.style.flexDirection = 'row';
             card.style.width = '80%';
             card.style.marginBottom = '20px';
             card.style.padding = '15px 25px';
@@ -88,7 +88,7 @@ function renderizarCarrinho() {
 
     } else {
         // Se o carrinho estiver vazio
-        resumo.style.display = 'none'; 
+        resumo.style.display = 'none';
         container.innerHTML = `
             <div class="card-prod" style="width: 80%;">
                 <h3 class="titulo-card-prod">Seu carrinho está vazio!</h3>
@@ -114,13 +114,13 @@ function renderizarCarrinho() {
 // Função para remover um item específico
 function removerDoCarrinho(index) {
     let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
-    
+
     // Remove 1 item a partir da posição "index"
-    carrinho.splice(index, 1); 
-    
+    carrinho.splice(index, 1);
+
     // Salva o carrinho atualizado no localStorage
     localStorage.setItem('carrinho', JSON.stringify(carrinho));
-    
+
     // Atualiza a tela imediatamente
-    renderizarCarrinho(); 
+    renderizarCarrinho();
 }
