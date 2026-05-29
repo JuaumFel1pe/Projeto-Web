@@ -122,12 +122,14 @@ nav {
   height: 100vh;
   background:
     linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.75)),
-    url("fundo.jpg") center/cover no-repeat;
+    url("../../../assets/imgs/GALARRAGA_EVENTOS_PI.png") center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   padding-top: 75px;
+
+  
 }
 
 .hero-content {
@@ -402,7 +404,6 @@ nav {
 .imagem-container {
   flex: 1; /* Ocupa a outra metade */
   min-height: 400px;
-  background-color: #1a1a1a; /* Cor de fundo para o espaço vazio */
   border-radius: 32px;
 }
 /* ================= SESSÃO 6: VALORES GLOBAIS ================= */
