@@ -1,69 +1,32 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const inputPesquisa = document.querySelector(".barra-pesquisa input");
-  const iconeLupa = document.getElementById("lupa");
-
-  function realizarBusca() {
-    const termo = inputPesquisa.value.trim();
-
-    if (termo !== "") {
-      console.log("Home procurando por:", termo);
-    }
-  }
-
-  iconeLupa.addEventListener("click", realizarBusca);
-
-  inputPesquisa.addEventListener("keypress", (event) => {
-    if (event.key === "Enter") {
-      realizarBusca();
-    }
-  });
-
-  const cards = document.querySelectorAll(".card-ev");
-
-  cards.forEach((card) => {
-    card.addEventListener("click", () => {
-      const nomeEvento = card.querySelector(".titulo-card-ev").textContent;
-
-      console.log("Redirecionando para o evento:", nomeEvento);
-    });
-  });
-
+  // Pega o usuário logado no localStorage
   const usuarioLogado = JSON.parse(localStorage.getItem("usuarioLogado"));
 
   const botaoLogin = document.getElementById("botao-login");
-
-  const botaoRegistrar = document.getElementById("botao-registrar");
-
-  const botaoSair = document.getElementById("botao-sair");
+  const botaoUsuario = document.getElementById("botao-usuario");
 
   if (usuarioLogado) {
-    botaoLogin.style.display = "none";
-    botaoRegistrar.style.display = "none";
-    botaoSair.style.display = "inline-block";
+    // Esconde o botão de Login
+    if (botaoLogin) botaoLogin.style.display = "none";
 
-    /* MOSTRAR EMAIL DO USUÁRIO */
+    // Mostra o botão único com o email do usuário
+    if (botaoUsuario) {
+      botaoUsuario.style.display = "flex";
+      
+      // Insere o ícone de usuário e o email no botão
+      botaoUsuario.innerHTML = `<i class="fas fa-user" style="margin-right: 8px;"></i> ${usuarioLogado.email}`;
 
-    const divButtons = document.querySelector(".buttons");
-
-    const nomeUsuario = document.createElement("div");
-
-    nomeUsuario.classList.add("usuario-logado");
-
-    nomeUsuario.innerHTML = `
-        <i class="fas fa-user"></i>
-        ${usuarioLogado.email}
-    `;
-
-    divButtons.prepend(nomeUsuario);
+      // Configura o evento de clique para fazer o Logout
+      botaoUsuario.addEventListener("click", (e) => {
+        e.preventDefault(); 
+        
+        // Confirmação simples para evitar cliques acidentais
+        if(confirm("Deseja realmente sair da sua conta?")) {
+            localStorage.removeItem("usuarioLogado");
+            alert("Você saiu da conta!");
+            window.location.reload(); // Recarrega a página para voltar ao estado deslogado
+        }
+      });
+    }
   }
-
-  /* LOGOUT */
-
-  botaoSair.addEventListener("click", () => {
-    localStorage.removeItem("usuarioLogado");
-
-    alert("Você saiu da conta!");
-
-    window.location.reload();
-  });
 });

@@ -13,13 +13,32 @@ if (modo === "registro") {
   loginForm.style.display = "block";
 }
 
+/* FUNÇÃO DE VALIDAÇÃO DE E-MAIL */
+function validarEmail(email) {
+  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return regex.test(email);
+}
+
 /* REGISTRAR */
 function registrar() {
-  const email = document.getElementById("registro-email").value;
-  const senha = document.getElementById("registro-senha").value;
+  // O .trim() remove espaços em branco que o usuário possa ter digitado sem querer no início ou fim
+  const email = document.getElementById("registro-email").value.trim();
+  const senha = document.getElementById("registro-senha").value.trim();
 
   if (email === "" || senha === "") {
     alert("Preencha todos os campos!");
+    return;
+  }
+
+  // Verifica se o e-mail tem um formato válido
+  if (!validarEmail(email)) {
+    alert("Por favor, insira um e-mail válido (ex: seuemail@dominio.com).");
+    return;
+  }
+
+  // Verifica se o usuário já existe para não sobrescrever
+  if (localStorage.getItem(email)) {
+    alert("Este e-mail já está registrado!");
     return;
   }
 
@@ -32,8 +51,19 @@ function registrar() {
 
 /* LOGIN */
 function fazerLogin() {
-  const email = document.getElementById("login-email").value;
-  const senha = document.getElementById("login-senha").value;
+  const email = document.getElementById("login-email").value.trim();
+  const senha = document.getElementById("login-senha").value.trim();
+
+  if (email === "" || senha === "") {
+    alert("Preencha todos os campos!");
+    return;
+  }
+
+  // Verifica o formato do e-mail também no login
+  if (!validarEmail(email)) {
+    alert("Por favor, insira um e-mail válido (ex: seuemail@dominio.com).");
+    return;
+  }
 
   const usuarioSalvo = localStorage.getItem(email);
 
@@ -51,7 +81,7 @@ function fazerLogin() {
     alert("Login realizado com sucesso!");
 
     if (localStorage.getItem("ingressoSelecionado")) {
-      window.location.href = "../home/carrinho.html";
+      window.location.href = "../carrinho/carrinho.html"; // Caminho ajustado para a pasta do carrinho
     } else {
       window.location.href = "../home/home.html";
     }

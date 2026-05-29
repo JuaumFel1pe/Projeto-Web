@@ -108,6 +108,25 @@
     color: white;
 }
 
+/* Efeito para o botão de usuário virar um botão de sair ao passar o mouse */
+.btn-sair-hover {
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-sair-hover:hover {
+  background: linear-gradient(135deg, #ff2626, #2a0d62);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(255, 38, 38, 0.6);
+}
+
+.btn-sair-hover:hover i {
+  /* Opcional: muda o ícone para o de sair ao passar o mouse */
+  content: "\f2f5"; /* Código do fa-sign-out-alt no FontAwesome */
+}
+
 /* ================= RESPONSIVIDADE ================= */
 @media (max-width: 768px) {
     .produtos-container-prod {

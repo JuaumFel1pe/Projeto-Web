@@ -23,9 +23,15 @@
         <div class="buttons">
             <a href="../produtos/produto.html" id="botao-produto" class="btn-nav">Produtos</a>
 
-            <a href="../carrinho/carrinho.html" id="botao-registrar" class="btn-nav">Carrinho</a>
+            <!-- Corrigido o ID de 'botao-registrar' para 'botao-carrinho' para fazer mais sentido -->
+            <a href="../carrinho/carrinho.html" id="botao-carrinho" class="btn-nav">Carrinho</a>
 
             <a href="../login/login.html?modo=login" id="botao-login" class="btn-nav">Login</a>
+
+            <!-- Este é o botão único que aparecerá quando logado -->
+            <button id="botao-usuario" class="btn-nav usuario-logado btn-sair-hover" style="display: none;">
+                <!-- O JavaScript vai inserir o email aqui -->
+            </button>
         </div>
     </nav>
 
@@ -34,8 +40,9 @@
 
         <h1 class="titulo-prod"><span id="cor-prod">Seu</span> Carrinho</h1>
 
-        <div class="produtos-container-prod" id="container-carrinho" style="flex-direction: column; align-items: center; width: 100%;">
-            </div>
+        <div class="produtos-container-prod" id="container-carrinho"
+            style="flex-direction: column; align-items: center; width: 100%;">
+        </div>
 
         <div id="resumo-carrinho" style="display: none; margin-top: 30px; text-align: center; width: 80%;">
             <h2 style="color: white; margin-bottom: 20px;">Total: <span id="total-carrinho">R$ 0,00</span></h2>

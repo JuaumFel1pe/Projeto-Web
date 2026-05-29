@@ -12,48 +12,27 @@
   </head>
   <body>
     <nav>
-      <a href="home.html">
-        <img
-          src="https://i.ibb.co/mCKymdJG/Design-sem-nome-removebg-preview.png"
-          alt="logo"
-          class="logo-pesquisa"
-        />
-      </a>
-      <div class="barra-pesquisa">
-        <input type="text" placeholder="Pesquisar..." />
-        <img
-          id="lupa"
-          src="https://cdn-icons-png.flaticon.com/512/3183/3183361.png"
-          alt="Lupa de pesquisa"
-        />
-      </div>
-
-      <div class="buttons">
-        <a href="produto.html" id="botao-produto" class="btn-nav">Produtos</a>
-
-        <a
-          href="../login/login.html?modo=registro"
-          id="botao-registrar"
-          class="btn-nav"
-          >Registrar-se</a
-        >
-        <a
-          href="../login/login.html?modo=login"
-          id="botao-login"
-          class="btn-nav"
-          >Login</a
-        >
-
-        <a
-          href="#"
-          id="botao-sair"
-          class="btn-nav btn-sair"
-          style="display: none"
-        >
-          <i class="fas fa-sign-out-alt"></i>
-          Sair
+        <a href="../home/home.html">
+            <img src="https://i.ibb.co/mCKymdJG/Design-sem-nome-removebg-preview.png" alt="logo" class="logo-pesquisa">
         </a>
-      </div>
+        <div class="barra-pesquisa">
+            <input type="text" placeholder="Pesquisar..." />
+            <img id="lupa" src="https://cdn-icons-png.flaticon.com/512/3183/3183361.png" alt="Lupa de pesquisa" />
+        </div>
+
+        <div class="buttons">
+            <a href="../produtos/produto.html" id="botao-produto" class="btn-nav">Produtos</a>
+
+            <!-- Corrigido o ID de 'botao-registrar' para 'botao-carrinho' para fazer mais sentido -->
+            <a href="../carrinho/carrinho.html" id="botao-carrinho" class="btn-nav">Carrinho</a>
+
+            <a href="../login/login.html?modo=login" id="botao-login" class="btn-nav">Login</a>
+
+            <!-- Este é o botão único que aparecerá quando logado -->
+            <button id="botao-usuario" class="btn-nav usuario-logado btn-sair-hover" style="display: none;">
+                <!-- O JavaScript vai inserir o email aqui -->
+            </button>
+        </div>
     </nav>
 
     <section class="hero">
@@ -145,7 +124,7 @@
           <h3 class="titulo-card-ev">Festa de fim de ano</h3>
         </a>
 
-        <a href="produto.html" class="card-ev">
+        <a href="../produtos/produto.html" class="card-ev">
           <img
             src="imgs/jantar-beneficente.jpg"
             alt="Jantar Beneficente"
